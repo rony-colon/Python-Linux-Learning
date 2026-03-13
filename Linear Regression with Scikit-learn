@@ -1,1 +1,14 @@
+from sklearn.linear_model import LinearRegression
+import numpy as np
 
+# Sample data: years of experience and salary
+X = np.array([1, 2, 3, 4, 5]).reshape(-1, 1)  # Input: Experience
+y = np.array([30000, 35000, 40000, 45000, 50000])  # Output: Salary
+
+# Create and train the model
+model = LinearRegression()
+model.fit(X, y)
+
+# Make a prediction
+predicted_salary = model.predict([[6]])  # Predict salary for 6 years of experience
+print(f"Predicted salary for 6 years of experience: ${predicted_salary[0]}")
